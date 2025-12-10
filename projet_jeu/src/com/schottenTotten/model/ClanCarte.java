@@ -45,8 +45,8 @@ public class ClanCarte implements Comparable<ClanCarte> {
             return 1;          
         }
 
-        String thisName = (this.couleur != null) ? this.couleur.getNom() : "";
-        String otherName = (other.couleur != null) ? other.couleur.getNom() : "";
+        String thisName = (this.couleur != null) ? this.couleur.getName() : "";
+        String otherName = (other.couleur != null) ? other.couleur.getName() : "";
 
         return thisName.compareTo(otherName);
     }
