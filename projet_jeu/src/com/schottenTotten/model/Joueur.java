@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Joueur {
     private String nom;
-    private List<CarteMain> main;           // ✅ main mixte (Clan + Tactique)
+    private List<CarteMain> main;          
     private List<Borne> borneAcquises;
 
-    // ✅ tactique
+    // tactique
     private int nbTactiquesJouees;
     private boolean jokerPose;
 
@@ -48,7 +48,7 @@ public class Joueur {
         return borneAcquises.size();
     }
 
-    // ---------- Tactique : getters/setters ----------
+    //getters/setters
 
     public int getNbTactiquesJouees() {
         return nbTactiquesJouees;

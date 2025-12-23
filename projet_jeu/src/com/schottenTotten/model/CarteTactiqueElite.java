@@ -4,7 +4,6 @@ public class CarteTactiqueElite implements CarteMain, CarteCombat {
 
     private final TypeElite type;
 
-    // Choix fait au moment de revendiquer (peut être null avant)
     private Integer valeurChoisie;
     private Couleur couleurChoisie;
 
@@ -21,12 +20,7 @@ public class CarteTactiqueElite implements CarteMain, CarteCombat {
         return valeurChoisie != null && couleurChoisie != null;
     }
 
-    /**
-     * Appelée au moment de la revendication.
-     * - JOKER : valeur 1..9 + couleur au choix
-     * - ESPION : valeur fixée à 7, couleur au choix
-     * - PORTE_BOUCLIER : valeur 1..3 + couleur au choix
-     */
+
     public void choisir(Couleur couleur, int valeur) {
         if (couleur == null) throw new IllegalArgumentException("couleur null");
 
