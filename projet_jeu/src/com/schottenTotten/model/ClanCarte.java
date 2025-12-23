@@ -20,8 +20,6 @@ public class ClanCarte implements Comparable<ClanCarte>, CarteMain, CarteCombat 
         return couleur;
     }
 
-    // ----- Impl CarteMain / CarteCombat -----
-
     @Override
     public boolean estTactique() {
         return false;
@@ -38,8 +36,6 @@ public class ClanCarte implements Comparable<ClanCarte>, CarteMain, CarteCombat 
         return this;
     }
 
-    // ----- equals / hashCode -----
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -54,8 +50,6 @@ public class ClanCarte implements Comparable<ClanCarte>, CarteMain, CarteCombat 
         return Objects.hash(value, couleur);
     }
 
-    // ----- Comparable -----
-
     @Override
     public int compareTo(ClanCarte other) {
         if (this.value < other.value) return -1;
@@ -66,8 +60,6 @@ public class ClanCarte implements Comparable<ClanCarte>, CarteMain, CarteCombat 
 
         return thisName.compareTo(otherName);
     }
-
-    // ----- Affichage -----
 
     @Override
     public String toString() {
