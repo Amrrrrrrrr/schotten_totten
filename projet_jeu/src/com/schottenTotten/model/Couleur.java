@@ -26,6 +26,20 @@ public class Couleur {
     }
     
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Couleur other = (Couleur) o;
+        return r == other.r && g == other.g && b == other.b
+                && java.util.Objects.equals(name, other.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(name, r, g, b);
+    }
+
+    @Override
     public String toString() {
         return name + "(" + r + "," + g + "," + b + ")";
     }

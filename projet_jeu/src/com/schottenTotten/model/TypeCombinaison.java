@@ -27,8 +27,8 @@ public class TypeCombinaison implements Comparable<TypeCombinaison> {
     public static final TypeCombinaison COULEUR =
             new TypeCombinaison("COULEUR");
 
-    public static final TypeCombinaison BRELANT =
-            new TypeCombinaison("BRELANT");
+    public static final TypeCombinaison BRELAN =
+            new TypeCombinaison("BRELAN");
 
     public static final TypeCombinaison SUITE_COULEUR =
             new TypeCombinaison("SUITE_COULEUR");
@@ -42,8 +42,8 @@ public class TypeCombinaison implements Comparable<TypeCombinaison> {
         if (this == SUITE_COULEUR) return 1;
         if (other == SUITE_COULEUR) return -1;
 
-        if (this == BRELANT) return 1;
-        if (other == BRELANT) return -1;
+        if (this == BRELAN) return 1;
+        if (other == BRELAN) return -1;
 
         if (this == COULEUR) return 1;
         if (other == COULEUR) return -1;

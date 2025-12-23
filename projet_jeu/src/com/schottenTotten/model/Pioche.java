@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Pioche {
+public class Pioche<T> {
 
-    private List<ClanCarte> cartes;
+    private List<T> cartes;
 
-    public Pioche(List<ClanCarte> cartes) {
+    public Pioche(List<T> cartes) {
         this.cartes = new ArrayList<>(cartes);
     }
 
@@ -24,10 +24,10 @@ public class Pioche {
         return cartes.size();
     }
 
-    public ClanCarte piocher() {
+    public T piocher() {
         if (estVide()) {
-            return null; 
+            return null;
         }
-        return cartes.remove(0); 
+        return cartes.remove(0);
     }
 }

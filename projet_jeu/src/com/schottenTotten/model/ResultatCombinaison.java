@@ -3,14 +3,14 @@ package com.schottenTotten.model;
 import java.util.List;
 import java.util.Objects;
 
-public class ResultCombination implements Comparable<ResultCombination> {
+public class ResultatCombinaison implements Comparable<ResultatCombinaison> {
 
     private final TypeCombinaison type;
     private final int sum;
 
     private final List<ClanCarte> cards;
 
-    public ResultCombination(TypeCombinaison type, int sum, List<ClanCarte> cards) {
+    public ResultatCombinaison(TypeCombinaison type, int sum, List<ClanCarte> cards) {
         this.type = type;
         this.sum = sum;
         this.cards = cards;
@@ -33,7 +33,7 @@ public class ResultCombination implements Comparable<ResultCombination> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ResultCombination other = (ResultCombination) o;
+        ResultatCombinaison other = (ResultatCombinaison) o;
 
         return sum == other.sum && Objects.equals(type, other.type) && Objects.equals(cards, other.cards);
     }
@@ -45,7 +45,7 @@ public class ResultCombination implements Comparable<ResultCombination> {
 
     
     @Override
-    public int compareTo(ResultCombination other) {
+    public int compareTo(ResultatCombinaison other) {
         int diffType = this.type.compareTo(other.type);
         if (diffType != 0) {
             return diffType;
@@ -62,6 +62,6 @@ public class ResultCombination implements Comparable<ResultCombination> {
 
     @Override
     public String toString() {
-        return "ResultCombination{type=" + type + ", sum=" + sum + ", cards=" + cards + '}';
+        return "ResultatCombinaison{type=" + type + ", sum=" + sum + ", cards=" + cards + '}';
     }
 }
