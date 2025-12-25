@@ -36,18 +36,18 @@ public class Main {
         StrategieIA iaJ1 = choisirIA(sc, "Joueur 1", j1);
         StrategieIA iaJ2 = choisirIA(sc, "Joueur 2", j2);
 
-        // ✅ liste des couleurs pour résoudre les élites
+
         List<Couleur> couleurs = creerCouleurs();
 
-        // ✅ resolveur console uniquement pour les humains (sinon null)
+
         ResolveurElite resolveurJ1 = (iaJ1 == null) ? new ResolveurEliteConsole(sc, couleurs) : null;
         ResolveurElite resolveurJ2 = (iaJ2 == null) ? new ResolveurEliteConsole(sc, couleurs) : null;
 
-        // ✅ constructeur Jeu(...) avec resolveurs
+
         Jeu jeu = new Jeu(j1, j2, tactique, resolveurJ1, resolveurJ2);
         jeu.demarrer();
 
-        System.out.println("\n✅ Début de la partie !");
+        System.out.println("\n Début de la partie !");
         while (jeu.estVictoire() == null) {
             afficherEtat(jeu);
 
@@ -65,11 +65,11 @@ public class Main {
         }
 
         Joueur gagnant = jeu.estVictoire();
-        System.out.println("\n🎉 Victoire de " + gagnant.getName() + " !");
+        System.out.println("\n Victoire de " + gagnant.getName() + " !");
         sc.close();
     }
 
-    // ----------------- Couleurs -----------------
+
 
     private static List<Couleur> creerCouleurs() {
         List<Couleur> couleurs = new ArrayList<>();
@@ -82,7 +82,7 @@ public class Main {
         return couleurs;
     }
 
-    // ----------------- Création joueurs -----------------
+
 
     private static Joueur creerJoueur(Scanner sc, int num) {
         System.out.print("Nom joueur " + num + " : ");
@@ -101,7 +101,7 @@ public class Main {
         return new IAAleatoire();
     }
 
-    // ----------------- Tours -----------------
+
 
     private static void jouerTourHumain(Scanner sc, Jeu jeu, int numJoueur) {
         while (true) {
@@ -141,7 +141,7 @@ public class Main {
 
             boolean ok = jeu.jouerCoup(idxBorne, idxCarte, choixPioche);
             if (!ok) {
-                System.out.println("❌ Coup invalide (borne pleine/revendiquée, carte pas jouable, règle tactique...). Réessaie.");
+                System.out.println(" Coup invalide (borne pleine/revendiquée, carte pas jouable, règle tactique...). Réessaie.");
                 continue;
             }
             break;
@@ -156,11 +156,9 @@ public class Main {
         }
         System.out.println("IA joue carte #" + coup.indexCarte + " sur borne #" + coup.indexBorne);
 
-        // 0 => auto
         jeu.jouerCoup(coup.indexBorne, coup.indexCarte, 0);
     }
 
-    // ----------------- Affichage -----------------
 
     private static void afficherEtat(Jeu jeu) {
         Joueur j1 = jeu.getJoueur1();
@@ -189,7 +187,6 @@ public class Main {
         }
     }
 
-    // ----------------- Utils -----------------
 
     private static int lireChoix(Scanner sc, int min, int max) {
         while (true) {

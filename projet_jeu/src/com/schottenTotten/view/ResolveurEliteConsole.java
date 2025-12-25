@@ -23,7 +23,7 @@ public class ResolveurEliteConsole implements ResolveurElite {
         System.out.println("\n[Résolution Elite] Joueur " + numJoueur + " sur borne B" + borne.getIndex());
         System.out.println("Carte : " + elite);
 
-        // choix couleur
+        //choix couleur
         System.out.println("Choisir couleur :");
         for (int i = 0; i < couleurs.size(); i++) {
             System.out.println((i + 1) + ") " + couleurs.get(i).getName());
@@ -31,7 +31,7 @@ public class ResolveurEliteConsole implements ResolveurElite {
         int choixC = lireChoix(1, couleurs.size());
         Couleur couleur = couleurs.get(choixC - 1);
 
-        // choix valeur selon type
+        //choix valeur selon type
         int valeur;
         if (elite.getTypeElite().equals(TypeElite.ESPION)) {
             valeur = 7;
@@ -39,7 +39,7 @@ public class ResolveurEliteConsole implements ResolveurElite {
         } else if (elite.getTypeElite().equals(TypeElite.PORTE_BOUCLIER)) {
             System.out.print("Valeur (1..3) : ");
             valeur = lireChoix(1, 3);
-        } else { // JOKER
+        } else { 
             System.out.print("Valeur (1..9) : ");
             valeur = lireChoix(1, 9);
         }

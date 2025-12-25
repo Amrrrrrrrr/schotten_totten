@@ -6,11 +6,11 @@ import java.util.List;
 public final class FabriqueTactique {
 
     private FabriqueTactique() {
-        // empêche instanciation
+
     }
 
     /**
-     * Pioche Tactique - Troupes d'élite seulement :
+     * Pioche Tactique :
      * - 2 Jokers
      * - 1 Espion
      * - 1 Porte-Bouclier

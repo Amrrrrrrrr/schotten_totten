@@ -99,12 +99,6 @@ public class Jeu {
         return !piocheClan.estVide();
     }
 
-    /**
-     * choixPioche :
-     * 1 = clan
-     * 2 = tactique
-     * 0 = auto (IA / défaut)
-     */
     private void piocherFinDeCoup(Joueur jActif, int numJoueur, int choixPioche) {
         if (!varianteTactique) {
             if (peutPiocherClan()) distribuerUneCarteClan(jActif);
@@ -128,8 +122,6 @@ public class Jeu {
             distribuerUneCarteClan(jActif);
         }
     }
-
-    //COUPS
 
     public List<Coup> coupsValides(int numJoueur) {
         List<Coup> res = new ArrayList<>();
