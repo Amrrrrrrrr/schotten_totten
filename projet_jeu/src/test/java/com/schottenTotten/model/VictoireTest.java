@@ -19,29 +19,23 @@ public class VictoireTest {
 
         List<Borne> bornes = jeu.getBornes();
 
-        // Remplissons 3 bornes consécutives pour J1
         for (int i = 0; i < 3; i++) {
             Borne b = bornes.get(i);
             Couleur couleur = new Couleur("Vert", 0, 255, 0);
 
-            // Ajouter cartes complètes pour J1
             b.addCarte(1, new ClanCarte(5, couleur));
             b.addCarte(1, new ClanCarte(6, couleur));
             b.addCarte(1, new ClanCarte(7, couleur));
 
-            // Ajouter cartes J2 pour équilibrer (pas nécessaires pour la victoire)
             b.addCarte(2, new ClanCarte(2, couleur));
             b.addCarte(2, new ClanCarte(3, couleur));
             b.addCarte(2, new ClanCarte(4, couleur));
 
-            // J1 revendique chaque borne
             jeu.reclamer(1, b);
         }
 
-        // Vérifions que J1 a bien 3 bornes acquises
         assertEquals(3, j1.getNombreBorneAcquises(), "J1 doit avoir 3 bornes acquises");
 
-        // Vérifions que la victoire est correctement détectée
         assertEquals(j1, jeu.estVictoire(), "J1 doit être déclaré vainqueur");
     }
 
@@ -56,7 +50,6 @@ public void testVictoireParMajoriteBornes() {
     List<Borne> bornes = jeu.getBornes();
     Couleur couleur = new Couleur("Jaune", 255, 255, 0);
 
-    // J1 revendique 5 bornes non consécutives
     int[] indices = {0, 2, 4, 6, 8};
     for (int idx : indices) {
         Borne b = bornes.get(idx);
@@ -71,10 +64,8 @@ public void testVictoireParMajoriteBornes() {
         jeu.reclamer(1, b);
     }
 
-    // Vérifions que J1 a bien 5 bornes
     assertEquals(5, j1.getNombreBorneAcquises(), "J1 doit avoir 5 bornes acquises");
 
-    // Victoire par majorité de bornes
     assertEquals(j1, jeu.estVictoire(), "J1 doit être déclaré vainqueur par majorité de bornes");
 }
 

@@ -4,9 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Tests unitaires de la classe Borne
- */
 public class BorneTest {
 
 
@@ -67,7 +64,7 @@ public class BorneTest {
         b.addCarte(1, new CarteCombatStub("C1"));
         b.addCarte(1, new CarteCombatStub("C2"));
         b.addCarte(1, new CarteCombatStub("C3"));
-        b.addCarte(1, new CarteCombatStub("C4")); // ignorée
+        b.addCarte(1, new CarteCombatStub("C4")); 
 
         assertEquals(3, b.getCartes(1).size());
         assertTrue(b.isFull(1));

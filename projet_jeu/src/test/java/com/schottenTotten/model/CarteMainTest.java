@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CarteMainTest {
 
-    // Stub minimal pour tester les méthodes default
     private static class CarteMainStub implements CarteMain {
         @Override
         public String toString() {
